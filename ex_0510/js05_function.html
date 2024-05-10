@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 선언 순서는 상관 X
+        alert(square(5));
+
+        // 함수
+        // 일련의 명령어를 하나로 모아 언제든지 사용할 수 있도록 만들어 놓은 명령의 집합
+        
+        /* function 함수명(인수) {
+                명령;
+                return  리턴값;         // 생략 가능 / 반환형 X0
+        } */
+
+        // 함수의 정의
+        function square(x) {
+            let result = x * x;
+            return result;
+        }
+
+        // 함수의 호출
+        console.log(square(3));
+
+        // 인수
+        // 함수는 인수를 여러 개 받을 수 있다.
+        // 인수가 여러 개라면 인수와 인수를 쉼표로 구분
+        function add(x, y) {
+            return x + y;
+        }
+
+        function bark() {
+            alert("멍멍");
+        }
+
+        bark();
+
+        // 함수 선언문의 호이스팅
+        // 자바스크립트 엔진은 변수 선언문과 마찬가지로 함수 선언문을 프로그램의 첫 머리로 끌어올린다.
+        // 따라서 함수 선언문은 프로그램 어떤 위치에서도 작성할 수 있다.
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
