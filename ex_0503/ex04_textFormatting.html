@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textFormatting</title>
+</head>
+<body>
+    <!-- HTML 서식 태그(text Formatting) -->
+
+    안녕하세요.
+    반갑습니다.
+    <!-- 띄어쓰기는 최대 1칸씩만 적용 -->
+    저          는 홍길동           입니다.
+
+    <!-- b 태그, strong 태그(쓰는 것 권장) : 굵은 텍스트 정의 -->
+    <p><b>단락</b>을 구별하는 p태그는 블록 요소입니다.</p>
+    <p><strong>단락과 단락</strong> 사이는 margin이라는 여백을 통해 구별되고 있음</p>
+
+    <!-- i 태그, em 태그 : 텍스트 기울이기-->
+    <p>
+        <i>링크 태그</i>
+        <em>링크 태그2</em>
+    </p>
+    
+    <!-- del 태그 : 취소선 -->
+    <p>
+        My favorite color is <del>blue</del> red.
+    </p>
+
+    <!-- small 태그 : 텍스트가 작아짐 -->
+    <p>
+        HTML <small>Small</small> Formatting
+    </p>
+
+    <!-- mark 태그 : 텍스트에 강조(형광펜) 효과 -->
+    <p>
+        HTML <mark>Marked</mark> Formatting
+    </p>
+
+    <!-- sub 태그 : 텍스트가 아래로 나온다?-->
+    <!-- sup 태그 : 텍스트가 위로 나온다?-->
+    <p>
+        This is <sub>subscripted</sub> text
+        This is <sup>superscripted</sup> text
+    </p>
+
+    <!-- pre 태그 : 태그 내의 내용이 작성된 그대로 브라우저에 표시!(공백, 개행문자 모두 포함)-->
+    <pre>
+        var myArray = [];
+        console.log(myArray.length); // 0
+        myArray[1000] = true;
+        console.log(myArray.length);  // 1001
+        console.log(myArray[0]); // undefined   
+    </pre>
+</body>
+</html>

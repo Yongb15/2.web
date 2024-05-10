@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 자료형</title>
+    <script>
+        /* 
+            자바스크립트의 자료형
+            var, let, const
+            var : 같은 이름의 변수가 만들어졌을 때 감지하지 못함
+            let : 같은 이름의 변수가 만들어졌을 때 감지한다. 값을 새롭게 대입하는 것은 가능
+            const : 일종의 상수와 같은 자료형, 초기화하고 값을 다시 대입하는게 불가능
+        */
+
+        var num1 = 100;
+        var num2 = 200;
+        var num3 = "100 + 200 = " + (num1 + num2);  // 문자열
+
+        document.write(num3);
+        console.log(num3);
+
+        var num3 = 500;     // num3를 다시 초기화 했는데 오류 sX
+
+        console.log(num3);
+
+        let num4 = 100;
+        num4 = 200;
+
+        function a() {
+            var variable = 1;   // 함수에서만 지역 변수 처리
+        }
+
+        console.log(variable);
+
+        if(true) {
+            var variable = 1;   // 다른 문법에서는 지역 변수 처리가 안된다.
+        }
+
+        // console.log(variable);
+
+        // if(true) {
+        //     let var2 = 2;
+        // }
+
+        // console.log(var2);     // undefined : null과 유사하지만 null은 아님 / 쓰레기 값 방지
+
+        console.log(v);
+        var v;
+        // var로 선언한 변수의 경우 호이스팅시 undefined로 변수를 초기화까지 해준다.
+
+        // console.log(c);
+        // let c;                   // 초기화 단계는 여기서 실행, b에 undefined
+        // console.log(c);          // undefined
+        // let은 선언 단계와 초기화 단계가 분리되어 진행
+        // 선언 단계는 런타임 이전에 변수 선언문에서 이루어진다.
+        // 초기화 단계는 런타임 이후에 변수 선언문에서 이루어진다.        
+
+        // const d;                // systaxError
+        // console.log(d);
+        // const는 선언과 동시에 초기화를 해야 한다.
+        // 그렇지 않으면 다른 에러가 출력된다.
+
+        console.log(f);
+        const f = 1;
+        // 문법은 지켰기 때문에 f가 자바스크립트 엔진에 등록은 되었지만 초기화 단계는 런타임 이후 변수 선언문에서 이루어지기 때문에 츨력이 안된다.
+        // 그러므로 let과 const는 스코프의 시작 위치에서 선언하는게 좋다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
