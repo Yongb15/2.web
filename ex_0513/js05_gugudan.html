@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #res {
+            width: 300px; 
+            height: 400px; 
+            background-color: black; 
+            color: white;
+        }
+    </style>
+    <script>
+        function func01() {
+            let dan = document.getElementById('dan').value;
+            let div = document.getElementById('res');
+            let d = "";
+
+            for(let i = 1; i <= 9; i++) {
+                d = d + `${dan} * ${i} = ${dan * i}<br>`;
+            }
+
+            div.innerHTML = d;
+        }
+
+        let click1 = true;
+
+        function func02() {
+            click1 = !click1;
+            document.getElementById("click").value = click1 ? "숨기기" : "보이기";
+        
+            // div의 display 속성을 none / block으로 바꾼다.
+            document.getElementById('res').style.display = click1 ? 'block' : 'none'; 
+        }
+    </script>
+</head>
+<body>
+    <div>단 : 
+        <input id="dan">
+        <input type="button" value="계산시작" onclick="func01()">
+        <input type="button" value="숨기기" id="click" onclick="func02()">
+        <hr>
+        <div id="res" class="bc"></div>
+    </div>
+</body>
+</html>

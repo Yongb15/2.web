@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            float: left;
+            margin: 5px;
+            padding-bottom: 13px;
+        }
+
+        .e {
+            border: none;
+        }
+    </style>
+    <script>
+        function sum() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let r = document.getElementById('result');
+
+            let result = 0;
+            result = Number(num1) + Number(num2);
+
+            r.value = result;
+        }
+
+        function sub() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let r = document.getElementById('result');
+
+            let result = 0;
+            result = Number(num1) - Number(num2);
+
+            r.value = result;
+        }
+
+        function mul() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let r = document.getElementById('result');
+
+            let result = 0;
+            result = Number(num1) * Number(num2);
+
+            r.value = result;
+        }
+
+        function div() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let r = document.getElementById('result');
+
+            let result = 0;
+            result = Math.floor(Number(num1) / Number(num2));
+
+            r.value = result;
+        }
+    </script>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td>수1</td>
+            <td><input type="text" id="num1" class="e"></td>
+        </tr>
+        <tr>
+            <td>수2</td>
+            <td><input type="text" id="num2" class="e"></td>  
+        </tr>
+        <tr>
+            <td colspan="2">
+                <ul>
+                    <li><input type="button" value="+" onclick="sum()"></li>
+                </ul>
+                <ul>
+                    <li><input type="button" value="-" onclick="sub()"></li>
+                </ul>
+                <ul>
+                    <li><input type="button" value="*" onclick="mul()"></li>
+                </ul>
+                <ul>
+                    <li><input type="button" value="/" onclick="div()"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>결과</td>
+            <td><input type="text" id="result" value="" class="e"></td>
+        </tr>
+    </table> 
+</body>
+</html>
