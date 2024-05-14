@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 이전 버튼을 누르면 이전 사진으로 이동
+        // 1번일 경우에는 다시 7번 이미지가 나오게 하기
+        // 다음 버튼을 누르면 다음 사진으로 이동
+        // 7번이면 다시 1번이 나오게 하기
+
+        let i = 1;
+
+        function prev() {
+            let im = document.getElementById("im");
+
+            i--;
+
+            if(i < 1) {
+                i = 7;
+            }
+
+            let n = "image/img" + i + ".jpg";
+            im.src = n; 
+        }
+
+        function next() {
+            let im = document.getElementById("im");
+
+            if(i > 7) {
+                i = 1;
+            }
+
+            let n = "image/img" + i + ".jpg";
+            im.src = n;
+
+            i++;
+        }
+
+        setInterval("next()", 1000);        // 1초 간격으로 next() 메서드를 호출한다.
+    </script>
+</head>
+<body>
+    <div id="gallery">
+        <p>
+            <a href="#" onclick="prev()">
+                <img src="image/left_btn.png" alt="" id = "prev">
+            </a>
+            <img src="image/img1.jpg" alt="" width="300px" height="200px" id="im">
+            <a href="#" onclick="next()">
+                <img src="image/right_btn.png" alt="" id="next">
+            </a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(f) {
+            // form 태그를 검색
+            // form 태그를 검색하는 1번째 방법
+            // forms : 현재 html 문서 내의 form 태그들을 순차적으로 배열로 정의해둔 상태
+            // body에서 form 태그가 여러 개 존재할 경우 forms 배열에 index로 form 태그를 구별
+            
+            // form 태그를 검색하는 첫 번째 방법
+            // let f = document.forms[0];          // 가장 첫 번째 form 태그
+
+            // form 태그를 검색하는 두 번째 방법
+            // form 태그에 name 속성을 갖고 검색
+            // let f = document.ff;
+
+            // form 태그를 검색하는 세 번째 방법
+            // 메서드에 매개변수로 전달(많이 사용됨)
+
+            // form 태그에서 m_id라는 name 속성을 가지고 있는 input 태그
+            let myId = f.m_id.value;
+
+            if(myId == '') {
+                alert('아이디를 입력해주세요!');
+                return;
+            }
+
+            let myAge = f.m_age.value;
+
+            if(myAge == '') {
+                alert('나이를 입력해주세요!');
+                return;
+            }
+
+            let myPwd = f.m_pwd.value;
+            if(myPwd == '') {
+                alert('비밀번호를 입력해주세요!');
+                return;
+            }
+
+            // name은 key 값으로 전송
+            // 입력된 값은 value 값으로 전송
+
+            // 전송방식(프로퍼티)
+            f.method = "get";
+            
+            // 목적지(프로퍼티)
+            f.action = "login.jsp";
+
+            // 입력된 데이터를 전송(메서드)
+            f.submit();         
+        }
+    </script>
+</head>
+<body>
+    <form name="ff"> <!-- 서버로 전달하고 싶은 데이터는 form 태그 안에 있어야 한다. 
+                        그렇지 않으면 다른 페이지라던가 java 클래스로 전달할 수 없다. -->
+        <table border="1px">
+            <tr>
+                <th>ID : </th>
+                <!-- name 속성은 form 태그의 자식 태그인 input과 textarea에만 쓸 수 있음 -->
+                <td><input name="m_id" type="text" placeholder="아이디를 입력해주세요!"></td>
+            </tr>
+            <tr>
+                <th>AGE : </th>
+                <td><input name="m_age" type="text" placeholder="나이를 입력해주세요!"></td>
+            </tr>
+            <tr>
+                <th>PWD : </th>
+                <td><input name="m_pwd" type="password" placeholder="비밀번호를 입력해주세요!"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="전송" onclick="check(this.form)">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

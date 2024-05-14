@@ -15,14 +15,17 @@
     </style>
     <script>
         function func01() {
+            // input 태그에 쓰여진 value를 읽어옴
             let dan = document.getElementById('dan').value;
             let div = document.getElementById('res');
             let d = "";
 
+            // dan에 해당하는 구구단 계산
             for(let i = 1; i <= 9; i++) {
                 d = d + `${dan} * ${i} = ${dan * i}<br>`;
             }
 
+            // div에 계산 결과 돌려주기
             div.innerHTML = d;
         }
 
